@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> 
+    <style>
+        body {
+            background-image: url('img/background.png');
+            background-color: #141219;
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .login-container {
+            background: rgba(255, 255, 255, 1);
+            padding: 80px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 735px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="login-container ">
+        <h2 class="text-start">Sign Up</h2>
+        <p class="text-start">Let's get you all st up so you can access your personal</p>
+        <form>
+            <div class="mb-3 text-start">
+                <label for="fullname" class="form-label">Full Name</label>
+                <input type="fullname" class="form-control" id="fullname" placeholder="john deo">
+            </div>
+            
+            <div class="mb-3 text-start">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" class="form-control" id="email" placeholder="Enter email">
+            </div>
+            <div class="mb-3 text-start">
+                <label for="password" class="form-label">Password</label>
+                <div class="input-group">
+                    <input type="password" class="form-control" id="password" placeholder="Enter password">
+                    <button class="btn btn-outline-secondary" type="button" id="togglePassword">
+                        <i class="fa fa-eye"></i> 
+                    </button>
+                </div>
+            </div>
+
+            <div class="mb-3 text-start">
+                <label for="confirmPassword" class="form-label">Confirm Password</label>
+                <div class="input-group">
+                    <input type="confirmPassword" class="form-control" id="confirmPassword" placeholder="Enter confirmPassword">
+                    <button class="btn btn-outline-secondary" type="button" id="toggleconfirmPassword">
+                        <i class="fa fa-eye"></i> 
+                    </button>
+                </div>
+            </div>
+            <div class="d-flex justify-content-between align-items-center">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="rememberMe">
+                    <label class="form-check-label" for="rememberMe"> I agree to all the Terms and Policy Policies </label>
+                </div>
+    
+            </div>
+            <button type="submit" class="btn btn-primary w-100 mt-3">Create account</button>
+            
+            <div class="mt-2 text-center" >
+                Already have an account? <a href="login.html" class="text-decoration-none">Login</a>
+            </div>
+        </form>
+    </div>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.getElementById('togglePassword').addEventListener('click', function () {
+            const passwordField = document.getElementById('password');
+            const icon = document.querySelector('#togglePassword i');
+            if (passwordField.type === 'password') {
+                passwordField.type = 'text';
+                icon.classList.remove('fa-eye');
+                icon.classList.add('fa-eye-slash');  
+            } else {
+                passwordField.type = 'password';
+                icon.classList.remove('fa-eye-slash');
+                icon.classList.add('fa-eye');
+            }
+        });
+    </script>
+</body>
+</html>
+
+
